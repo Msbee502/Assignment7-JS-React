@@ -1,11 +1,20 @@
 import Gallery from './components/gallery.jsx';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Home from './pages/home.jsx';
+import About from './pages/about.jsx';
 
 
 function App () {
   return (
     <div>
-      <Gallery />
-    
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Gallery />} />
+      </Routes>
+      </BrowserRouter>
+ 
 
       {/*... */}
     </div>
